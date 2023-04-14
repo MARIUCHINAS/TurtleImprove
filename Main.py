@@ -2,7 +2,7 @@ import turtle
 import ShapeHandler as sh
 
 """
-Ingore this one this is just a example / test file to test the ShapeHandler
+Ingore this one. This is just an example / test file to test the ShapeHandler
 
 """
 
