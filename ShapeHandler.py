@@ -1,4 +1,5 @@
 import turtle
+import math
 
 def Circle(size, autopen:bool, pensize, color, fill:bool):
     turtle.pensize(pensize)
@@ -14,8 +15,26 @@ def Circle(size, autopen:bool, pensize, color, fill:bool):
     if fill:
         turtle.end_fill()
 
-def Trianangle(size, autopen:bool, pensize, color, fill:bool):
-    print("Sorry this feature is currently unavaible")
+def Triangle(size: int, autopen: bool, pensize: int, color: str, fill: bool) -> None:
+    current_pos = turtle.position()
+    turtle.color(color)
+    if autopen:
+        turtle.penup()
+    turtle.setposition(-size / 2, -size / (2 * math.sqrt(3)))
+    if autopen:
+        turtle.pendown()
+    if fill:
+        turtle.begin_fill()
+    
+    turtle.pensize(pensize)
+    for _ in range(3):
+        turtle.forward(size)
+        turtle.left(120)
+    
+    if fill:
+        turtle.end_fill()
+    
+    turtle.setposition(current_pos)
 
 def Square(size: int, autopen: bool, pensize: int, color: str, fill: bool) -> None:
     current_pos = turtle.position()
